@@ -2,11 +2,11 @@
 
 class Products_Model extends Model{
 
-    function __construct(){
+    public function __construct(){
 
     }
 
-    function all_products(){
+    public function all_products(){
 //        in case we have a connection to the database
 //        return $this->database->query_database('SELECT * FROM products');
 

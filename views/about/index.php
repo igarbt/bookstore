@@ -1,6 +1,6 @@
 <br />
 
-<h2>We are a very successful books store</h2>
+<p>We are a very successful books store</p>
 <a href="<?=URL?>about/contact_us">Contact Us</a><br /><br />
 <?php
 if(isset($this->contact_details)){

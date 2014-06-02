@@ -1,2 +1,2 @@
-<h2>Just come and start reading...</h2>
+<p>Just come and start reading...</p>
 <img src="<?=IMAGES_URL?>bookstore.jpg">

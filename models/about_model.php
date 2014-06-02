@@ -2,11 +2,11 @@
 
 class About_Model extends Model{
 
-    function __construct(){
+    public function __construct(){
 
     }
 
-    function contact_details(){
+    public function contact_details(){
 //        in case we have a connection to the database
 //        return $this->database->query_database('SELECT name, country, address, phone FROM company_branches');
 
