@@ -22,7 +22,7 @@ class User extends Controller{
     public function create(){
         $data = array();
         $data['username'] = $_POST['username'];
-        $data['password'] = md5($_POST['password']);
+        $data['password'] = $_POST['password'];
         $data['role'] = $_POST['role'];
 
         $this->model->create($data);
@@ -37,7 +37,7 @@ class User extends Controller{
     public function editSave($id){
         $data = array();
         $data['username'] = $_POST['username'];
-        $data['password'] = md5($_POST['password']);
+        $data['password'] = $_POST['password'];
         $data['role'] = $_POST['role'];
         $data['id'] = $id;
 

@@ -1,18 +1,13 @@
 <?php
 
-require 'config/database.php';
-require 'config/paths.php';
-
-//require 'libs/App.php';
-//require 'libs/Controller.php';
-//require 'libs/Model.php';
-//require 'libs/View.php';
+require 'config.php';
 
 function __autoload($classname){
     $directories = array(
-        'controllers/',
-        'libs/',
-        'models/'
+        LIBS,
+        LIBS_FORM,
+        CONTROLLERS,
+        MODELS
     );
 
     foreach($directories as $directory)

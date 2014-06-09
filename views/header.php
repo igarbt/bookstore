@@ -3,8 +3,10 @@
 <head>
     <title>Kalosa Books Store</title>
     <link rel="stylesheet" href="<?=URL?>public/css/default.css" />
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/themes/smoothness/jquery-ui.css" />
     <script type="text/javascript" src="<?=URL?>public/js/jquery.js" ></script>
-    <script type="text/javascript" src="<?=URL?>public/js/custom.js" ></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
     <?php
     if(isset($this->js)){
         foreach($this->js as $js){
