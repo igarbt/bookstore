@@ -1,26 +1,29 @@
 <?php
 
+require '../config.php';
 require '../libs/Form.php';
 require '../libs/Form/Val.php';
+require '../libs/Database.php';
+
+$db = new Database(DB_TYPE, DB_HOST, DB_NAME, DB_USER, DB_PASS);
 
 try{
-if(isset($_REQUEST['run'])){
-    $form = new Form();
+    if(isset($_REQUEST['run'])){
+        $form = new Form();
 
-    $form   ->post('name')
+        $form   ->post('name')
             ->val('minlength', 2)
             ->post('age')
             ->val('minlength', 2)
             ->val('digit')
             ->post('gender');
-    $form->submit();
+        $form->submit();
 
-    echo 'The form passed!';
-    $data = $form->fetch();
-    echo '<pre>';
-    print_r($data);
-    echo '</pre>';
-}
+        echo 'The form passed!';
+        $data = $form->fetch();
+
+        $db->insert('person', $data);
+    }
 } catch (Exception $e ){
     echo $e->getMessage();
 }

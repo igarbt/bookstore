@@ -6,6 +6,7 @@ define('LIBS', 'libs/');
 define('LIBS_FORM', 'libs/Form/');
 define('CONTROLLERS', 'controllers/');
 define('MODELS', 'models/');
+define('UTIL', 'util/');
 
 //Database
 define('DB_TYPE', 'mysql');

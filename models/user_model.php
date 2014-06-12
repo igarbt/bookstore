@@ -7,11 +7,11 @@ class User_Model extends Model{
     }
 
     public function userList(){
-        return $this->db->select('SELECT id, username, role FROM user');
+        return $this->db->select('SELECT userid, username, role FROM user');
     }
 
-    public function userSingleList($id){
-        return $this->db->select('SELECT id, username, role FROM user WHERE id = :id', array(':id' => $id));
+    public function userSingleList($userid){
+        return $this->db->select('SELECT userid, username, role FROM user WHERE userid = :userid', array(':userid' => $userid));
     }
 
     public function create($data){
@@ -20,7 +20,7 @@ class User_Model extends Model{
             'password' => Hash::create('md5', $_POST['password'], HASH_PASSWORD_KEY),
             'role' => $data['role']
         );
-        $this->db->insert('users', $postData);
+        $this->db->insert('user', $postData);
     }
 
     public function editSave($data){
@@ -29,15 +29,15 @@ class User_Model extends Model{
             'password' => Hash::create('md5', $_POST['password'], HASH_PASSWORD_KEY),
             'role' => $data['role']
         );
-        $this->db->update('users', $postData, "`id` = {$data['id']}");
+        $this->db->update('user', $postData, "`userid` = {$data['userid']}");
     }
 
-    public function delete($id){
-        $data = $this->db->select('SELECT role FROM user WHERE id = :id', array(':id' => $id));
+    public function delete($userid){
+        $data = $this->db->select('SELECT role FROM user WHERE userid = :userid', array(':userid' => $userid));
         if($data[0]['role'] == 'owner'){
             return false;
         }
 
-        $this->db->delete('user', "id = '$id'");
+        $this->db->delete('user', "userid = '$userid'");
     }
 } 

@@ -25,6 +25,7 @@
         <?php endif; ?>
         <?php if(Session::get('loggedIn') == true): ?>
             <a href="<?=URL?>dashboard">Dashboard</a>
+            <a href="<?=URL?>note">Notes</a>
             <?php if(Session::get('role') == 'owner'): ?>
                 <a href="<?=URL?>user">Users</a>
             <?php endif; ?>

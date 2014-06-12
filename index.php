@@ -7,7 +7,8 @@ function __autoload($classname){
         LIBS,
         LIBS_FORM,
         CONTROLLERS,
-        MODELS
+        MODELS,
+        UTIL
     );
 
     foreach($directories as $directory)
