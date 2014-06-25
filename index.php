@@ -27,3 +27,4 @@ function __autoload($classname){
 
 
 $app = new App();
+$app->init();

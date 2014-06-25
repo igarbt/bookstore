@@ -8,8 +8,8 @@ class Controller{
 //        $this->model = new Model();
     }
 
-    public function loadModel($name){
-        $path = 'models/'.$name.'_model.php';
+    public function loadModel($name, $modelPath = 'models/'){
+        $path = $modelPath . $name . '_model.php';
         if(file_exists($path)){
             $modelName = $name.'_Model';
             $this->model = new $modelName();
